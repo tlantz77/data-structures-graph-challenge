@@ -33,5 +33,12 @@ describe Node do
     expect  { mike.nodes }.to output("\"Casey\"\n\"Duke\"\n\"Maurice\"\n").to_stdout
   end
 
+  it "can check if a node follows another" do
+    expect(matt.exists? {|node| node.value == "Alyssa"} ).to be true
+    expect(alyssa.exists? {|node| node.value == "Alyssa"} ).to be true
+    expect(duke.exists? {|node| node.value == "Maurice"} ).to be false
+  end
+
+
 
 end
