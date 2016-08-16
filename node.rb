@@ -17,6 +17,17 @@ class Node
     end
   end
 
+  def exists?
+	  return true if yield(self)
 
+    search_nodes = @edges
+
+		until search_nodes.empty?
+			node = search_nodes.pop
+			return true if yield(node)
+			search_nodes += node.nodes
+		end
+		false
+	end
 
 end
