@@ -37,7 +37,9 @@ describe Node do
     expect(matt.exists? {|node| node.value == "Alyssa"} ).to be true
     expect(alyssa.exists? {|node| node.value == "Alyssa"} ).to be true
     expect(duke.exists? {|node| node.value == "Maurice"} ).to be false
+    expect(alyssa.exists? {|node| node.value == "Casey"} ).to be false
   end
+
 
 
 
